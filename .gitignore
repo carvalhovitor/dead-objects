@@ -1,0 +1,13 @@
+.DS_Store
+*.jpg
+
+assets/fonts
+content
+kirby
+panel
+site/*
+!site/blueprints
+!site/templates
+!site/snippets
+thumbs
+index.php
