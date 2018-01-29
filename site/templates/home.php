@@ -53,7 +53,7 @@
     <?php endforeach ?>
     
   </main>
-  
+
   <section id="information" class="information">
     <div class="grid">
       <div class="information-wrapper">

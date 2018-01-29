@@ -1,6 +1,7 @@
 var site = {
     main  : {},
     flkty : {},
+    id    : {},
     init  : function() {
         site.updateBodyClass();
 
@@ -11,32 +12,39 @@ var site = {
             pageDots: false,
             draggable: false,
             selectedAttraction: 1,
-            friction: 1
+            friction: 1,
+            wrapAround: true
         });
         main.focus();
         main.style.opacity = 1;
 
         // Menu functionality
 
-        var informationToggle = document.getElementById('information-toggle'),
-            information = document.getElementById('information');
-    
-        informationToggle.onclick = function() {
-            if (!isOpen()) {
-                updateMenu(false);
+        var information = document.getElementById('information'),
+            isOpen = false;
+
+        document.getElementById('information-toggle').onclick = function() {
+            isOpen = !isOpen;
+
+            if (isOpen) {
+                information.classList.add('open');
             }
         };
 
         // Flickity slide change
 
         flkty.on('settle', function() {
-            var id = document.querySelector('.is-selected').id;
+            id = document.querySelector('.is-selected').id;
     
-            if (id) {
+            if (id.length) {
                 window.location.hash = '#' + id;
             }
+
             site.updateBodyClass();
-            main.focus();
+
+            if (!main.activeElement) {
+                main.focus();
+            }
         })
 
         // Go to slide based on hash
@@ -46,18 +54,11 @@ var site = {
         }
 
         window.onhashchange = function() {
-            if (isOpen()) {
-                updateMenu(true);
+            if (isOpen) {
+                information.classList.remove('open');
+                isOpen = !isOpen;
             }
             flkty.selectCell(window.location.hash);
-        }
-
-        var updateMenu = function(close) {
-            close ? information.classList.remove('open') : information.classList.add('open');
-        }
-
-        var isOpen = function() {
-            return information.classList.contains('open');
         }
     },
     updateBodyClass : function() {
