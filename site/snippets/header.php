@@ -15,6 +15,11 @@
 
 <nav>
   <div class="grid">
+
+    <p id="slide-number"></p>
+
+    <div id="description"></div>
+
     <p class="index-trigger">
       <button id="information-toggle">Information</button>
       <button>Index</button>

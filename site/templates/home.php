@@ -12,35 +12,6 @@
   <?php foreach($objects as $object): ?>
 
     <section id="<?= $object->slug() ?>" class="object">
-
-      <div class="grid">
-
-          <p class="number"><?= $object->num() ?></p>
-
-          <p class="description">
-            <?= $object->title()->html() ?><br>
-            
-            <?php if (!$object->text()->empty()){
-              echo $object->text()->html();
-            }
-
-            foreach($object->dimensions()->yaml() as $array): 
-                $values = array_values($array);
-                foreach ($array as $key => $value):
-                  if ($key == "width" and !$object->text()->empty()) echo ", ";
-                  if ($value != 0) echo $value;
-                  if ($key == "width" or ($value != end($array) and !empty(current($array)))) { 
-                    echo "&thinsp;&times;&thinsp;";
-                  }
-                  if ($value == end($array)) {
-                    echo "&thinsp;cm";
-                  }
-                endforeach;
-              endforeach; ?>
-
-          </p>
-            
-        </div>
       
       <div class="image">
         <?php foreach($object->images()->limit(1) as $image): ?>
@@ -61,5 +32,60 @@
       </div>
     </div>
   </section>
+
+  <section id="index">
+    <div class="grid">
+
+        <div class="line"></div>
+        <div id="number"></div>
+
+        <ul>
+          <!-- <p>INDEX</p> -->
+          <?php foreach($objects->sortBy('title', 'asc') as $object): ?>
+            <li><a data-number="<?= $object->num() ?>" href=""><span><?= $object->title()->html() ?><span></a></li>
+          <?php endforeach ?>
+        </ul>
+
+    </div>
+
+  </section>
+
+  <script type="text/javascript">
+
+    <?php
+      $count = 0;
+      $json = [];
+
+      foreach($objects as $object) {
+          $json[$count]['information'] = $object->title()->value() . "<br>";
+
+          if (!$object->text()->empty()) $json[$count]['information'] .= $object->text()->value();
+
+          foreach($object->dimensions()->yaml() as $array) {
+
+            $values = array_values($array);
+
+            foreach ($array as $key => $value) {
+
+              // Starts prop with empty string so we can concatenate all the information later
+              if (!isset($json[$count]['information'])) $json[$count]['information'] = '';
+
+              if ($key == "width" and !$object->text()->empty()) $json[$count]['information'] .= ", ";
+              if ($value != 0) $json[$count]['information'] .= $value;
+              if ($key == "width" or ($value != end($array) and !empty(current($array)))) { 
+                $json[$count]['information'] .= "&thinsp;&times;&thinsp;";
+              }
+              if ($value == end($array)) $json[$count]['information'] .= "&thinsp;cm";
+            }
+            
+          }
+          
+          $count++;
+      }
+    ?>
+
+    var objects = <?= json_encode($json); ?>
+
+  </script>
 
 <?php snippet('footer') ?>
