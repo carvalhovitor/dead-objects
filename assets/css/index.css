@@ -23,139 +23,17 @@ button {
 button:focus {
   outline: none; }
 
-/* General Setup */
-html {
-  font-family: "Neue Haas Grotesk Text Pro", sans-serif; }
-
-body {
-  line-height: 1; }
-
-.wrapper {
-  max-width: 1920px;
-  margin: 0 auto;
-  position: relative; }
-
-#carousel {
-  opacity: 0; }
-
-h1 {
-  /* margin-top: -3.25rem; */
-  font-size: 13.5rem;
-  grid-column-start: 2;
-  grid-column-end: 17;
-  letter-spacing: -0.75rem;
-  line-height: .825em; }
-
-a:hover {
-  border: none; }
-
-::selection {
-  color: #fff;
-  background: #000; }
-
-/* Navigation */
-.title-card nav {
-  display: none; }
-
-nav .grid {
-  position: absolute;
-  top: 0;
-  z-index: 9;
-  height: auto;
-  pointer-events: none; }
-
-nav .index-trigger {
-  grid-column-start: 14;
-  grid-column-end: 17; }
-
-nav p {
-  pointer-events: all; }
-
-.open {
-  display: block; }
-
-/* Structure */
-main section {
-  width: 100%; }
-
-.grid {
-  width: calc(100% - (2.25rem * 2));
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-column-gap: 1.5rem;
-  margin: 2.25rem;
-  font-size: 1rem;
-  line-height: 1.35; }
-
-.object .grid {
-  height: auto; }
-
-/* Introduction Slides */
-.information {
-  display: none;
-  background: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9; }
-
-.information-wrapper {
-  grid-column-start: 2;
-  grid-column-end: 14; }
-
-.information p {
-  line-height: 1.05;
-  font-size: 3.75rem;
-  letter-spacing: -.1rem; }
-
-.information p + p {
-  text-indent: 2em; }
-
-.information a {
-  border-bottom: 2px solid #000;
-  padding-bottom: 4px; }
-
-/* Objects */
-.object div {
-  letter-spacing: normal; }
-
-.object .number {
-  grid-column-start: 2;
-  grid-column-end: 4; }
-
-.object .description {
-  grid-column-start: 4;
-  grid-column-end: 12; }
-
-.object .image {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  z-index: -1; }
-
-.object img {
-  max-width: 100%;
-  max-height: 100vh;
-  margin: 0 auto;
-  user-select: none; }
-
-/* Carousel Arrows */
 body.intro .flickity-prev-next-button {
   height: 100vh; }
 
 .flickity-prev-next-button {
-  height: calc(100vh - 6.5rem);
+  height: 100vh;
   width: 50vw;
   background: none;
   border-radius: 0;
   top: auto;
   transform: none;
   bottom: 0;
-  z-index: 0;
   position: fixed; }
 
 .flickity-prev-next-button:hover {
@@ -171,7 +49,108 @@ body.intro .flickity-prev-next-button {
 .flickity-prev-next-button svg {
   display: none; }
 
-/* Index */
+/* General Setup */
+html {
+  font-family: "Neue Haas Grotesk Text Pro", sans-serif; }
+
+body {
+  line-height: 1;
+  line-height: 1.35; }
+
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative; }
+
+#carousel {
+  opacity: 0; }
+
+a:hover {
+  border: none; }
+
+.open {
+  display: block; }
+
+/* Navigation */
+.title-card header {
+  display: none; }
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1; }
+
+header .grid {
+  height: auto; }
+
+#slide-index {
+  grid-column: 2 / 4; }
+
+#object-information {
+  grid-column: 4 / 8; }
+
+header nav {
+  grid-column: 14 / 17; }
+
+/* Structure */
+h1 {
+  font-size: 13.5rem;
+  grid-column: 2 / 17;
+  letter-spacing: -0.75rem;
+  line-height: .825em; }
+
+main .slide {
+  width: 100%; }
+
+.grid {
+  width: calc(100% - (2.25rem * 2));
+  height: calc(100vh - (2.25rem * 2));
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-column-gap: 1.5rem;
+  margin: 2.25rem; }
+
+/* Objects */
+.object .image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center; }
+
+.object img {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: 0 auto;
+  user-select: none; }
+
+/* Information Page */
+.information {
+  display: none;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9; }
+
+.information-wrapper {
+  grid-column: 2 / 14; }
+
+.information p {
+  line-height: 1.05;
+  font-size: 3.75rem;
+  letter-spacing: -.1rem; }
+
+.information p + p {
+  text-indent: 2em; }
+
+.information a {
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px; }
+
+/* Index Page */
 #index {
   background: #000;
   height: auto;
