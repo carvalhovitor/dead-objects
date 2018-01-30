@@ -55,11 +55,11 @@ var site = {
 
         var slideNumber = document.getElementById('slide-number');
 
-        // var updateSlideNumber = function() {
-        //     var number = flkty.selectedIndex;
+        var updateSlideNumber = function() {
+            var number = flkty.selectedIndex;
 
-        //     slideNumber.innerHTML = number;
-        // }
+            slideNumber.innerHTML = number;
+        }
 
         // Populate object information with JSON
 
