@@ -1,0 +1,256 @@
+@charset "UTF-8";
+@import 'reset';
+@import 'variables';
+@import 'flickity-override';
+
+/* General Setup */
+
+html {
+  font-family: "Neue Haas Grotesk Text Pro", sans-serif;
+}
+
+body {
+  line-height: 1;
+  line-height: 1.35;
+}
+
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#carousel {
+  opacity: 0;
+  // display: none;
+}
+
+a:hover {
+  border: none;
+}
+
+.wrapper .closed {
+  display: none;
+}
+
+.wrapper .open {
+  display: block;
+}
+
+svg {
+  stroke: #000;
+}
+
+.open + button svg {
+  stroke: #fff;
+}
+
+/* Navigation */
+
+.title-card header {
+  display: none;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+header .grid {
+  height: auto;
+}
+
+#slide-index {
+  grid-column: 2 / 4;
+}
+
+#object-information {
+  grid-column: 4 / 8;
+}
+
+header nav {
+  grid-column: 14 / 17;
+}
+
+/* Structure */
+
+h1 {
+  font-size: 13.5rem;
+  grid-column: 2 / 17;
+  letter-spacing: -0.75rem;
+  line-height: .825em;
+}
+
+main .slide {
+  width: 100%;
+  height: 100vh;
+}
+
+.grid {
+  width: calc(100% - (2.25rem * 2));
+  height: calc(100vh - (2.25rem * 2));
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-column-gap: $gutter;
+  padding: $margin;
+}
+
+/* Objects */
+
+.object .image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.object img {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: 0 auto;
+  user-select: none;
+  // display: none;
+}
+
+/* */
+
+// aside section {
+//   display: none;
+// }
+
+aside {
+  display: none;
+}
+
+#close {
+  font-size: 5rem;
+  position: fixed;
+  right: 3rem;
+  top: 4px;
+  // top: calc(50% - 25px - 2.25rem);
+  z-index: 9;
+}
+
+/* Information Page */
+
+.information {
+  display: none;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.information-wrapper {
+  grid-column: 2 / 14;
+}
+
+.information p {
+  line-height: 1.05;
+  font-size: 3.75rem;
+  letter-spacing: -.1rem;
+}
+
+.information p + p {
+  text-indent: 2em;
+}
+
+.information a {
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
+/* Index Page */ 
+
+#index {
+  background: #000;
+  height: auto;
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  // display: none;
+}
+
+#index * {
+  color: #fff;
+  height: auto;
+}
+
+.line{
+  border-right: 1px solid #fff;
+  grid-column: 1/2;
+}
+
+#number {
+  font-size: calc(40vw);
+  font-family: "Neue Haas Grotesk Display Pro";
+  letter-spacing: -.045em;
+  line-height: 0.75;
+  // margin-left: -.15em;
+  grid-column: 2 / 8;
+  top: 1rem;
+  position: fixed;
+  left: calc(((100% - 4.5rem)/12)); // + .75rem for perfect grid fit
+}
+
+#index ul {
+  // line-height: 1.375;
+  font-size: 1.375rem;
+  line-height: 1.5;
+  grid-column: 11 / 16;
+  column-rule: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  padding: 0 1rem;
+  column-count: 2;
+  column-gap: $gutter; 
+  column-fill: auto;
+}
+
+#index ul > p {
+  column-span: all;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: .1em;
+}
+
+#index li {
+  text-indent: -$indent;
+  margin-left: $indent;
+}
+
+#index li, #index a {
+  display: block;
+  width: calc(100% - $indent);
+}
+
+#index a {
+  // padding-bottom: .25rem;
+}
+
+#index span {
+  pointer-events: none;
+}
+
+#index li a:hover span {
+  border-bottom: 1px solid #fff;
+}
+
+/* Debugging */
+
+pre {
+  font-size: 21px !important;
+  letter-spacing: 1px !important;
+}
+
+
+@media screen and (min-width: 1600px) {
+  #number {
+     font-size: 40rem;
+  }
+}

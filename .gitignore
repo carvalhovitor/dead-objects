@@ -1,5 +1,6 @@
 .DS_Store
 *.jpg
+*.map
 
 assets/fonts
 content
