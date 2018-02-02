@@ -68,8 +68,17 @@ body {
 a:hover {
   border: none; }
 
-.open {
+.wrapper .closed {
+  display: none; }
+
+.wrapper .open {
   display: block; }
+
+svg {
+  stroke: #000; }
+
+.open + button svg {
+  stroke: #fff; }
 
 /* Navigation */
 .title-card header {
@@ -101,7 +110,8 @@ h1 {
   line-height: .825em; }
 
 main .slide {
-  width: 100%; }
+  width: 100%;
+  height: 100vh; }
 
 .grid {
   width: calc(100% - (2.25rem * 2));
@@ -109,7 +119,7 @@ main .slide {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-column-gap: 1.5rem;
-  margin: 2.25rem; }
+  padding: 2.25rem; }
 
 /* Objects */
 .object .image {
@@ -125,6 +135,17 @@ main .slide {
   max-height: 100vh;
   margin: 0 auto;
   user-select: none; }
+
+/* */
+aside {
+  display: none; }
+
+#close {
+  font-size: 5rem;
+  position: fixed;
+  right: 3rem;
+  top: 4px;
+  z-index: 9; }
 
 /* Information Page */
 .information {
@@ -156,8 +177,7 @@ main .slide {
   height: auto;
   position: absolute;
   top: 0;
-  z-index: 9;
-  display: none; }
+  z-index: 9; }
 
 #index * {
   color: #fff;
@@ -168,13 +188,14 @@ main .slide {
   grid-column: 1/2; }
 
 #number {
-  font-size: 40rem;
+  font-size: calc(40vw);
   font-family: "Neue Haas Grotesk Display Pro";
   letter-spacing: -.045em;
   line-height: 0.75;
   grid-column: 2 / 8;
-  position: sticky;
-  top: 1rem; }
+  top: 1rem;
+  position: fixed;
+  left: calc(((100% - 4.5rem)/12)); }
 
 #index ul {
   font-size: 1.375rem;
@@ -212,5 +233,9 @@ main .slide {
 pre {
   font-size: 21px !important;
   letter-spacing: 1px !important; }
+
+@media screen and (min-width: 1600px) {
+  #number {
+    font-size: 40rem; } }
 
 /*# sourceMappingURL=index.css.map */
