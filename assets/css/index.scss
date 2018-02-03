@@ -17,12 +17,10 @@ body {
 .wrapper {
   max-width: 1920px;
   margin: 0 auto;
-  position: relative;
 }
 
 #carousel {
   opacity: 0;
-  // display: none;
 }
 
 a:hover {
@@ -77,9 +75,9 @@ header nav {
 /* Structure */
 
 h1 {
-  font-size: 13.5rem;
-  grid-column: 2 / 17;
-  letter-spacing: -0.75rem;
+  font-size: 12.5vw;
+  grid-column: 2/17;
+  letter-spacing: -.05em;
   line-height: .825em;
 }
 
@@ -89,7 +87,8 @@ main .slide {
 }
 
 .grid {
-  width: calc(100% - (2.25rem * 2));
+  // width: calc(100% - (2.25rem * 2));
+  width: 100%;
   height: calc(100vh - (2.25rem * 2));
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -113,17 +112,23 @@ main .slide {
   max-height: 100vh;
   margin: 0 auto;
   user-select: none;
-  // display: none;
 }
 
-/* */
-
-// aside section {
-//   display: none;
-// }
+/* Aside */
 
 aside {
   display: none;
+  background: #fff;
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  left: 0;
+}
+
+aside .grid {
+  height: auto;
 }
 
 #close {
@@ -131,7 +136,6 @@ aside {
   position: fixed;
   right: 3rem;
   top: 4px;
-  // top: calc(50% - 25px - 2.25rem);
   z-index: 9;
 }
 
@@ -139,21 +143,20 @@ aside {
 
 .information {
   display: none;
-  background: #fff;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 9;
 }
 
 .information-wrapper {
-  grid-column: 2 / 14;
+  margin-top: -1rem;
+  grid-column: 2 / 15;
 }
 
 .information p {
   line-height: 1.05;
   font-size: 3.75rem;
-  letter-spacing: -.1rem;
+  letter-spacing: -.025em;
 }
 
 .information p + p {
@@ -170,7 +173,7 @@ aside {
 #index {
   background: #000;
   height: auto;
-  position: absolute;
+  // position: absolute;
   top: 0;
   z-index: 9;
   // display: none;
@@ -191,7 +194,6 @@ aside {
   font-family: "Neue Haas Grotesk Display Pro";
   letter-spacing: -.045em;
   line-height: 0.75;
-  // margin-left: -.15em;
   grid-column: 2 / 8;
   top: 1rem;
   position: fixed;
@@ -199,7 +201,6 @@ aside {
 }
 
 #index ul {
-  // line-height: 1.375;
   font-size: 1.375rem;
   line-height: 1.5;
   grid-column: 11 / 16;
@@ -229,10 +230,6 @@ aside {
   width: calc(100% - $indent);
 }
 
-#index a {
-  // padding-bottom: .25rem;
-}
-
 #index span {
   pointer-events: none;
 }
@@ -252,5 +249,82 @@ pre {
 @media screen and (min-width: 1600px) {
   #number {
      font-size: 40rem;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .information p {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .information-wrapper {
+    grid-column: 1/15;
+  }
+
+  .information p {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  h1 {
+    font-size: 14.425vw;
+    grid-column: 1/9;
+  }
+
+  #slide-index {
+    grid-column: 1/2;
+  }
+
+  #object-information {
+    grid-column: 3/7;
+  }
+
+  header nav {
+    grid-column: 7/8;
+  }
+
+  .information-wrapper {
+    grid-column: 1/8;
+  }
+
+  .information p {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  #object-information {
+    grid-column: 3/9;
+  }
+
+  header nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+    z-index: -9;
+  }
+
+  .information-wrapper {
+    grid-column: 1/9;
+  }
+
+  #close {
+    top: auto;
+    bottom: 1rem;
+    // right: 2rem;
   }
 }

@@ -22,8 +22,7 @@
       <section id="object-information">
         <p id="object-title"></p>
         <p>
-          <span id="object-year"></span>
-          <span id="object-dimensions"></span>
+          <span id="object-year"></span><span id="object-dimensions"></span>
         </p>
       </section>
 

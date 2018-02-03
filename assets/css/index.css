@@ -43,7 +43,7 @@ body.intro .flickity-prev-next-button {
 .flickity-prev-next-button.next {
   right: 0; }
 
-.flickity-prev-next-button.prev {
+.flickity-prev-next-button.previous {
   left: 0; }
 
 .flickity-prev-next-button svg {
@@ -59,8 +59,7 @@ body {
 
 .wrapper {
   max-width: 1920px;
-  margin: 0 auto;
-  position: relative; }
+  margin: 0 auto; }
 
 #carousel {
   opacity: 0; }
@@ -104,9 +103,9 @@ header nav {
 
 /* Structure */
 h1 {
-  font-size: 13.5rem;
-  grid-column: 2 / 17;
-  letter-spacing: -0.75rem;
+  font-size: 12.5vw;
+  grid-column: 2/17;
+  letter-spacing: -.05em;
   line-height: .825em; }
 
 main .slide {
@@ -114,7 +113,7 @@ main .slide {
   height: 100vh; }
 
 .grid {
-  width: calc(100% - (2.25rem * 2));
+  width: 100%;
   height: calc(100vh - (2.25rem * 2));
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -136,9 +135,19 @@ main .slide {
   margin: 0 auto;
   user-select: none; }
 
-/* */
+/* Aside */
 aside {
-  display: none; }
+  display: none;
+  background: #fff;
+  width: 100vw;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  left: 0; }
+
+aside .grid {
+  height: auto; }
 
 #close {
   font-size: 5rem;
@@ -150,19 +159,18 @@ aside {
 /* Information Page */
 .information {
   display: none;
-  background: #fff;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 9; }
 
 .information-wrapper {
-  grid-column: 2 / 14; }
+  margin-top: -1rem;
+  grid-column: 2 / 15; }
 
 .information p {
   line-height: 1.05;
   font-size: 3.75rem;
-  letter-spacing: -.1rem; }
+  letter-spacing: -.025em; }
 
 .information p + p {
   text-indent: 2em; }
@@ -175,7 +183,6 @@ aside {
 #index {
   background: #000;
   height: auto;
-  position: absolute;
   top: 0;
   z-index: 9; }
 
@@ -237,5 +244,56 @@ pre {
 @media screen and (min-width: 1600px) {
   #number {
     font-size: 40rem; } }
+@media screen and (max-width: 1600px) {
+  .information p {
+    font-size: 3rem; } }
+@media screen and (max-width: 1200px) {
+  .information-wrapper {
+    grid-column: 1/15; }
+
+  .information p {
+    font-size: 2.5rem; } }
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 0.75rem;
+    padding: 1.25rem; }
+
+  h1 {
+    font-size: 14.425vw;
+    grid-column: 1/9; }
+
+  #slide-index {
+    grid-column: 1/2; }
+
+  #object-information {
+    grid-column: 3/7; }
+
+  header nav {
+    grid-column: 7/8; }
+
+  .information-wrapper {
+    grid-column: 1/8; }
+
+  .information p {
+    font-size: 1.5rem;
+    line-height: 1.2; } }
+@media screen and (max-width: 480px) {
+  #object-information {
+    grid-column: 3/9; }
+
+  header nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+    z-index: -9; }
+
+  .information-wrapper {
+    grid-column: 1/9; }
+
+  #close {
+    top: auto;
+    bottom: 1rem; } }
 
 /*# sourceMappingURL=index.css.map */

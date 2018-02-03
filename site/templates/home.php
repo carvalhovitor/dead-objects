@@ -66,12 +66,12 @@
           if (!$object->text()->empty()) $json[$count]['year'] = $object->text()->value();
 
           foreach($object->dimensions()->yaml() as $array) {
-
             $values = array_values($array);
 
             foreach ($array as $key => $value) {
 
               // Starts prop with empty string so we can concatenate all the information later
+              
               if (!isset($json[$count]['dimensions'])) $json[$count]['dimensions'] = '';
 
               if ($key == "width" and !$object->text()->empty()) $json[$count]['dimensions'] .= ", ";
@@ -81,14 +81,12 @@
               }
               if ($key == "depth") $json[$count]['dimensions'] .= "&thinsp;cm";
             }
-            
           }
-          
           $count++;
       }
     ?>
 
-    var objects = <?= json_encode($json); ?>
+    let objects = <?= json_encode($json); ?>
 
   </script>
 
