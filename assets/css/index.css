@@ -3,7 +3,6 @@
   padding: 0;
   border: none;
   box-sizing: border-box;
-  list-style: none;
   color: black;
   text-decoration: none; }
 
@@ -59,7 +58,8 @@ body {
 
 .wrapper {
   max-width: 1920px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 #carousel {
   opacity: 0; }
@@ -136,7 +136,7 @@ main .slide {
 aside {
   display: none;
   background: #fff;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   position: absolute;
   top: 0;
@@ -148,7 +148,7 @@ aside {
 #close {
   font-size: 5rem;
   position: fixed;
-  right: 3rem;
+  right: 2rem;
   top: 4px;
   z-index: 3; }
 
@@ -180,29 +180,33 @@ aside {
   #index * {
     color: #fff;
     height: auto; }
-  #index ul {
-    font-size: 1.375rem;
-    line-height: 1.5;
-    grid-column: 11 / 16;
-    border-width: 1px;
-    border: 1px solid #fff;
-    border-top: none;
-    border-bottom: none;
-    column-rule: 1px solid #fff;
-    padding: 0 1rem;
-    column-count: 2;
-    column-gap: 1.5rem;
-    column-fill: auto; }
-  #index li {
+
+ul {
+  font-size: 1.375rem;
+  line-height: 1.5;
+  grid-column: 10/16;
+  border-width: 1px;
+  border: 1px solid #fff;
+  border-top: none;
+  border-bottom: none;
+  column-rule: 1px solid #fff;
+  padding: 0 1rem;
+  column-count: 2;
+  column-gap: 1.5rem;
+  column-fill: auto;
+  color: white;
+  list-style: none; }
+  ul li {
     text-indent: -1.5rem;
     margin-left: 1.5rem; }
-  #index li, #index a {
-    display: block;
-    width: calc(100% - $indent); }
-  #index li a:hover span {
-    border-bottom: 1px solid #fff; }
-  #index span {
-    pointer-events: none; }
+    ul li > span {
+      display: none; }
+    ul li a {
+      display: block; }
+      ul li a span {
+        pointer-events: none; }
+    ul li a:hover span {
+      border-bottom: 1px solid #fff; }
 
 .line {
   border-right: 1px solid #fff;
@@ -216,7 +220,7 @@ aside {
   grid-column: 2 / 8;
   top: 1rem;
   position: fixed;
-  left: calc(((100% - 4.5rem)/12)); }
+  left: calc(100%/16 + 1.25rem); }
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 1600px) {
@@ -225,15 +229,29 @@ aside {
 @media screen and (max-width: 1600px) {
   .information p {
     font-size: 3rem; } }
-@media screen and (max-width: 1600px) {
-  .information p {
-    font-size: 3rem; } }
+@media screen and (max-width: 1400px) {
+  /* INDEX PAGE */
+  ul {
+    column-count: 1; } }
 @media screen and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr); }
+
+  header nav {
+    grid-column: 10/13; }
+
   .information-wrapper {
-    grid-column: 1/15; }
+    grid-column: 1/12; }
 
   .information p {
-    font-size: 2.5rem; } }
+    font-size: 2.5rem; }
+
+  /* INDEX PAGE */
+  ul {
+    grid-column: 8/12; }
+
+  #number {
+    left: calc(100%/12 + 1.5rem); } }
 @media screen and (max-width: 800px) {
   .grid {
     grid-template-columns: repeat(8, 1fr);
@@ -258,7 +276,35 @@ aside {
 
   .information p {
     font-size: 1.5rem;
-    line-height: 1.2; } }
+    line-height: 1.2; }
+
+  /* INDEX PAGE */
+  #number {
+    display: none; }
+
+  ul {
+    column-count: 2;
+    grid-column: 1/9;
+    border: none;
+    padding: 0; }
+    ul li {
+      text-indent: -25px;
+      margin-left: 50px; }
+      ul li > span {
+        display: inline-block;
+        width: .25rem; }
+      ul li a {
+        display: inline;
+        margin-left: 1rem; }
+
+  #close {
+    top: auto;
+    right: 1.5rem;
+    bottom: 0; } }
+@media screen and (max-width: 600px) {
+  /* INDEX PAGE */
+  ul {
+    column-count: 1; } }
 @media screen and (max-width: 480px) {
   #object-information {
     grid-column: 3/9; }
@@ -273,7 +319,6 @@ aside {
     grid-column: 1/9; }
 
   #close {
-    top: auto;
-    bottom: 1rem; } }
+    top: auto; } }
 
 /*# sourceMappingURL=index.css.map */

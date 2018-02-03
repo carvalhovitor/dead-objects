@@ -43,7 +43,12 @@
   
           <ul>
             <?php foreach($objects->sortBy('title', 'asc') as $object): ?>
-              <li><a data-number="<?= $object->num(); ?>" href="#<?= $object->slug(); ?>"><span><?= $object->title()->html() ?><span></a></li>
+              <li>
+                <span class="object-number"><?= $object->num(); ?></span>
+                <a href="#<?= $object->slug(); ?>">
+                  <span><?= $object->title()->html() ?></span>
+                </a>
+              </li>
             <?php endforeach ?>
           </ul>
   

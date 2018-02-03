@@ -108,27 +108,29 @@ const site = {
 
         // Adds the Index page functionality
 
-        let list = $('index'),
-            items = [].slice.call(list.getElementsByTagName('a')),
-            number = $('number'),
+        let index = $('index'),
+            items = [].slice.call(index.getElementsByTagName('a')),
+            numbers = [].slice.call(index.querySelectorAll('.object-number')),
+            display = $('number'),
             timer;
 
         document.addEventListener('mouseover', (e) => {
             for (let i = 0; i < items.length; i++) {
-                let data = items[i].dataset.number;
+
+                let data = numbers[i].innerHTML;
 
                 items[i].addEventListener('mouseover', () => {
                     clearTimeout(timer);
 
                     timer = setTimeout(() => {
-                        number.style.opacity = 1;
-                        number.innerHTML = data;
+                        display.style.opacity = 1;
+                        display.innerHTML = data;
                     }, 100)
                 })
             }
 
             if (!items.includes(e.target)) {
-                number.style.opacity = 0;
+                display.style.opacity = 0;
                 clearTimeout(timer);
             }
         })
