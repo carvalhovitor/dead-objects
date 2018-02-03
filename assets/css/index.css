@@ -49,7 +49,7 @@ body.intro .flickity-prev-next-button {
 .flickity-prev-next-button svg {
   display: none; }
 
-/* General Setup */
+/* GENERAL SETUP */
 html {
   font-family: "Neue Haas Grotesk Text Pro", sans-serif; }
 
@@ -69,7 +69,6 @@ a:hover {
 
 .wrapper .closed {
   display: none; }
-
 .wrapper .open {
   display: block; }
 
@@ -79,7 +78,7 @@ svg {
 .open + button svg {
   stroke: #fff; }
 
-/* Navigation */
+/* NAVIGATION */
 .title-card header {
   display: none; }
 
@@ -101,7 +100,7 @@ header .grid {
 header nav {
   grid-column: 14 / 17; }
 
-/* Structure */
+/* STRUCTURE */
 h1 {
   font-size: 12.5vw;
   grid-column: 2/17;
@@ -120,7 +119,7 @@ main .slide {
   grid-column-gap: 1.5rem;
   padding: 2.25rem; }
 
-/* Objects */
+/* OBJECTS */
 .object .image {
   position: absolute;
   top: 0;
@@ -128,14 +127,13 @@ main .slide {
   height: 100vh;
   display: flex;
   align-items: center; }
-
 .object img {
   max-width: 100%;
   max-height: 100vh;
   margin: 0 auto;
   user-select: none; }
 
-/* Aside */
+/* ASIDE */
 aside {
   display: none;
   background: #fff;
@@ -145,9 +143,8 @@ aside {
   top: 0;
   z-index: 999;
   left: 0; }
-
-aside .grid {
-  height: auto; }
+  aside .grid {
+    height: auto; }
 
 #close {
   font-size: 5rem;
@@ -156,39 +153,58 @@ aside .grid {
   top: 4px;
   z-index: 9; }
 
-/* Information Page */
+/* INFORMATION PAGE */
 .information {
   display: none;
   top: 0;
   left: 0;
   z-index: 9; }
+  .information p {
+    line-height: 1.05;
+    font-size: 3.75rem;
+    letter-spacing: -.025em; }
+  .information p + p {
+    text-indent: 2em; }
+  .information a {
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px; }
 
 .information-wrapper {
   margin-top: -1rem;
   grid-column: 2 / 15; }
 
-.information p {
-  line-height: 1.05;
-  font-size: 3.75rem;
-  letter-spacing: -.025em; }
-
-.information p + p {
-  text-indent: 2em; }
-
-.information a {
-  border-bottom: 2px solid #000;
-  padding-bottom: 4px; }
-
-/* Index Page */
+/* INDEX PAGE */
 #index {
   background: #000;
   height: auto;
   top: 0;
   z-index: 9; }
-
-#index * {
-  color: #fff;
-  height: auto; }
+  #index * {
+    color: #fff;
+    height: auto; }
+  #index ul {
+    font-size: 1.375rem;
+    line-height: 1.5;
+    grid-column: 11 / 16;
+    border-width: 1px;
+    border: 1px solid #fff;
+    border-top: none;
+    border-bottom: none;
+    column-rule: 1px solid #fff;
+    padding: 0 1rem;
+    column-count: 2;
+    column-gap: 1.5rem;
+    column-fill: auto; }
+  #index li {
+    text-indent: -1.5rem;
+    margin-left: 1.5rem; }
+  #index li, #index a {
+    display: block;
+    width: calc(100% - $indent); }
+  #index li a:hover span {
+    border-bottom: 1px solid #fff; }
+  #index span {
+    pointer-events: none; }
 
 .line {
   border-right: 1px solid #fff;
@@ -204,46 +220,13 @@ aside .grid {
   position: fixed;
   left: calc(((100% - 4.5rem)/12)); }
 
-#index ul {
-  font-size: 1.375rem;
-  line-height: 1.5;
-  grid-column: 11 / 16;
-  column-rule: 1px solid #fff;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
-  padding: 0 1rem;
-  column-count: 2;
-  column-gap: 1.5rem;
-  column-fill: auto; }
-
-#index ul > p {
-  column-span: all;
-  text-align: center;
-  margin-bottom: 1rem;
-  letter-spacing: .1em; }
-
-#index li {
-  text-indent: -1.5rem;
-  margin-left: 1.5rem; }
-
-#index li, #index a {
-  display: block;
-  width: calc(100% - $indent); }
-
-#index span {
-  pointer-events: none; }
-
-#index li a:hover span {
-  border-bottom: 1px solid #fff; }
-
-/* Debugging */
-pre {
-  font-size: 21px !important;
-  letter-spacing: 1px !important; }
-
+/* MEDIA QUERIES */
 @media screen and (min-width: 1600px) {
   #number {
     font-size: 40rem; } }
+@media screen and (max-width: 1600px) {
+  .information p {
+    font-size: 3rem; } }
 @media screen and (max-width: 1600px) {
   .information p {
     font-size: 3rem; } }

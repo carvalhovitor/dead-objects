@@ -3,7 +3,7 @@
 @import 'variables';
 @import 'flickity-override';
 
-/* General Setup */
+/* GENERAL SETUP */
 
 html {
   font-family: "Neue Haas Grotesk Text Pro", sans-serif;
@@ -27,12 +27,14 @@ a:hover {
   border: none;
 }
 
-.wrapper .closed {
-  display: none;
-}
+.wrapper {
+  .closed {
+    display: none;
+  }
 
-.wrapper .open {
-  display: block;
+  .open {
+    display: block;
+  }
 }
 
 svg {
@@ -43,7 +45,7 @@ svg {
   stroke: #fff;
 }
 
-/* Navigation */
+/* NAVIGATION */
 
 .title-card header {
   display: none;
@@ -72,7 +74,7 @@ header nav {
   grid-column: 14 / 17;
 }
 
-/* Structure */
+/* STRUCTURE */
 
 h1 {
   font-size: 12.5vw;
@@ -87,7 +89,6 @@ main .slide {
 }
 
 .grid {
-  // width: calc(100% - (2.25rem * 2));
   width: 100%;
   height: calc(100vh - (2.25rem * 2));
   display: grid;
@@ -96,25 +97,27 @@ main .slide {
   padding: $margin;
 }
 
-/* Objects */
+/* OBJECTS */
 
-.object .image {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+.object {
+  .image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: 0 auto;
+    user-select: none;
+  }
 }
 
-.object img {
-  max-width: 100%;
-  max-height: 100vh;
-  margin: 0 auto;
-  user-select: none;
-}
-
-/* Aside */
+/* ASIDE */
 
 aside {
   display: none;
@@ -125,10 +128,10 @@ aside {
   top: 0;
   z-index: 999;
   left: 0;
-}
 
-aside .grid {
-  height: auto;
+  .grid {
+    height: auto;
+  }
 }
 
 #close {
@@ -139,13 +142,28 @@ aside .grid {
   z-index: 9;
 }
 
-/* Information Page */
+/* INFORMATION PAGE */
 
 .information {
   display: none;
   top: 0;
   left: 0;
   z-index: 9;
+
+  p {
+    line-height: 1.05;
+    font-size: 3.75rem;
+    letter-spacing: -.025em;
+  }
+
+  p + p {
+    text-indent: 2em;
+  }
+
+  a {
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+  }
 }
 
 .information-wrapper {
@@ -153,35 +171,52 @@ aside .grid {
   grid-column: 2 / 15;
 }
 
-.information p {
-  line-height: 1.05;
-  font-size: 3.75rem;
-  letter-spacing: -.025em;
-}
 
-.information p + p {
-  text-indent: 2em;
-}
-
-.information a {
-  border-bottom: 2px solid #000;
-  padding-bottom: 4px;
-}
-
-/* Index Page */ 
+/* INDEX PAGE */ 
 
 #index {
   background: #000;
   height: auto;
-  // position: absolute;
   top: 0;
   z-index: 9;
-  // display: none;
-}
 
-#index * {
-  color: #fff;
-  height: auto;
+  * {
+    color: #fff;
+    height: auto;
+  }
+
+  ul {
+    font-size: 1.375rem;
+    line-height: 1.5;
+    grid-column: 11 / 16;
+    border-width: 1px;
+    border: 1px solid #fff;
+    border-top: none;
+    border-bottom: none;
+    column-rule: 1px solid #fff;
+    padding: 0 1rem;
+    column-count: 2;
+    column-gap: $gutter; 
+    column-fill: auto;
+  }
+
+  li {
+    text-indent: -$indent;
+    margin-left: $indent;
+  }
+
+  li, a {
+    display: block;
+    width: calc(100% - $indent);
+  }
+
+  li a:hover span {
+    border-bottom: 1px solid #fff;
+  }
+
+  span {
+    pointer-events: none;
+  }
 }
 
 .line{
@@ -200,62 +235,31 @@ aside .grid {
   left: calc(((100% - 4.5rem)/12)); // + .75rem for perfect grid fit
 }
 
-#index ul {
-  font-size: 1.375rem;
-  line-height: 1.5;
-  grid-column: 11 / 16;
-  column-rule: 1px solid #fff;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
-  padding: 0 1rem;
-  column-count: 2;
-  column-gap: $gutter; 
-  column-fill: auto;
-}
 
-#index ul > p {
-  column-span: all;
-  text-align: center;
-  margin-bottom: 1rem;
-  letter-spacing: .1em;
-}
-
-#index li {
-  text-indent: -$indent;
-  margin-left: $indent;
-}
-
-#index li, #index a {
-  display: block;
-  width: calc(100% - $indent);
-}
-
-#index span {
-  pointer-events: none;
-}
-
-#index li a:hover span {
-  border-bottom: 1px solid #fff;
-}
-
-/* Debugging */
-
-pre {
-  font-size: 21px !important;
-  letter-spacing: 1px !important;
-}
-
+/* MEDIA QUERIES */
 
 @media screen and (min-width: 1600px) {
+
   #number {
      font-size: 40rem;
   }
+
 }
 
 @media screen and (max-width: 1600px) {
+
   .information p {
     font-size: 3rem;
   }
+
+}
+
+@media screen and (max-width: 1600px) {
+
+  .information p {
+    font-size: 3rem;
+  }
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -267,9 +271,11 @@ pre {
   .information p {
     font-size: 2.5rem;
   }
+
 }
 
 @media screen and (max-width: 800px) {
+  
   .grid {
     grid-template-columns: repeat(8, 1fr);
     grid-column-gap: 0.75rem;
@@ -301,8 +307,8 @@ pre {
     font-size: 1.5rem;
     line-height: 1.2;
   }
-}
 
+}
 
 @media screen and (max-width: 480px) {
 
@@ -325,6 +331,5 @@ pre {
   #close {
     top: auto;
     bottom: 1rem;
-    // right: 2rem;
   }
 }
