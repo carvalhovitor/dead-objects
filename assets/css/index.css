@@ -87,9 +87,8 @@ header {
   position: absolute;
   top: 0;
   z-index: 1; }
-
-header .grid {
-  height: auto; }
+  header .grid {
+    height: auto; }
 
 #slide-index {
   grid-column: 2 / 4; }
@@ -141,7 +140,7 @@ aside {
   min-height: 100vh;
   position: absolute;
   top: 0;
-  z-index: 999;
+  z-index: 2;
   left: 0; }
   aside .grid {
     height: auto; }
@@ -151,14 +150,13 @@ aside {
   position: fixed;
   right: 3rem;
   top: 4px;
-  z-index: 9; }
+  z-index: 3; }
 
 /* INFORMATION PAGE */
 .information {
   display: none;
   top: 0;
-  left: 0;
-  z-index: 9; }
+  left: 0; }
   .information p {
     line-height: 1.05;
     font-size: 3.75rem;
@@ -178,7 +176,7 @@ aside {
   background: #000;
   height: auto;
   top: 0;
-  z-index: 9; }
+  z-index: 2; }
   #index * {
     color: #fff;
     height: auto; }
@@ -214,7 +212,7 @@ aside {
   font-size: calc(40vw);
   font-family: "Neue Haas Grotesk Display Pro";
   letter-spacing: -.045em;
-  line-height: 0.75;
+  line-height: .75;
   grid-column: 2 / 8;
   top: 1rem;
   position: fixed;
@@ -239,7 +237,7 @@ aside {
 @media screen and (max-width: 800px) {
   .grid {
     grid-template-columns: repeat(8, 1fr);
-    grid-column-gap: 0.75rem;
+    grid-column-gap: .75rem;
     padding: 1.25rem; }
 
   h1 {
@@ -269,8 +267,7 @@ aside {
     position: fixed;
     bottom: 0;
     left: 0;
-    padding: 1.25rem;
-    z-index: -9; }
+    padding: 1.25rem; }
 
   .information-wrapper {
     grid-column: 1/9; }
