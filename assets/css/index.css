@@ -96,6 +96,10 @@ header {
 #object-information {
   grid-column: 4 / 8; }
 
+#object-title {
+  text-indent: -1rem;
+  margin-left: 1rem; }
+
 header nav {
   grid-column: 14 / 17; }
 
