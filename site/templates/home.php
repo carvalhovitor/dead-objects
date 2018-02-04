@@ -81,7 +81,7 @@
 
               if ($key == "width" and !$object->text()->empty()) $json[$count]['dimensions'] .= ", ";
               if ($value != 0) $json[$count]['dimensions'] .= $value;
-              if ($key == "width" or ($value != end($array) and !empty(current($array)))) { 
+              if ($key == "width" or ($key == "height" and end($array) != 0)) { 
                 $json[$count]['dimensions'] .= "&thinsp;&times;&thinsp;";
               }
               if ($key == "depth") $json[$count]['dimensions'] .= "&thinsp;cm";
