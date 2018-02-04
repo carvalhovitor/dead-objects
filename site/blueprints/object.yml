@@ -1,4 +1,4 @@
-title: Object
+title: Project
 
 pages: false
 
@@ -6,17 +6,16 @@ fields:
   title:
     label: Title
     type:  text
-    # width: 3/4
+    # width: 2/4
 
   text:
-    label: Text
-    type: textarea
-    width: 3/4
-    placeholder: c. 1984, 10 × 10 cm
+    label: Year
+    type: text
+    width: 2/4
 
   dimensions:
     label: Dimensions
-    width: 1/4
+    width: 2/4
     type: structure
     style: table
     fields:

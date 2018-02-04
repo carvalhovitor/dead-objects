@@ -1,5 +1,8 @@
 title: Page
 
+options:
+  template: true
+
 fields:
   title:
     label: Title

@@ -13,3 +13,5 @@ site/*
 thumbs
 index.php
 .htaccess
+*.css
+.sass-cache

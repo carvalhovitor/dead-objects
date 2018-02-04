@@ -2,9 +2,6 @@ title: Objects
 
 files: false
 
-pages:
-  template: object
-
 options: 
   template: false  
   url: false  
