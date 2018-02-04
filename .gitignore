@@ -12,3 +12,4 @@ site/*
 !site/snippets
 thumbs
 index.php
+.htaccess
