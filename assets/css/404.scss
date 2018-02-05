@@ -1,0 +1,19 @@
+/* 404 PAGE NOT FOUND */
+
+.error {
+    margin: 1.5rem 1.5rem 1.5rem 4rem;
+
+    p {
+        font-size: 6rem;
+        letter-spacing: -.04em;
+        line-height: 1;
+    }
+
+    a {
+        border-bottom: 1px solid black;
+
+        &:hover {
+            border: none;
+        }
+    }
+}

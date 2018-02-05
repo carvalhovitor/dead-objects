@@ -30,8 +30,8 @@
     
 </main>
 
-  <aside class="closed">
-    <section id="information" class="information slide closed">
+  <aside>
+    <section id="information" class="information slide">
       <div class="grid">
         <div class="information-wrapper">
           <?php echo $page->text()->kirbytext() ?>
@@ -39,7 +39,7 @@
       </div>
     </section>
   
-    <section id="index" class="closed">
+    <section id="index">
       <div class="grid">
   
           <div class="line"></div>
@@ -59,7 +59,7 @@
       </div>
     </section>
 
-    <button id="close">
+    <button id="close-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"><path stroke-miterlimit="10" d="M.5 49.5l49-49M.5.5l49 49"/></svg>
     </button>
   </aside>

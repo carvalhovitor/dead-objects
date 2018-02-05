@@ -104,7 +104,7 @@ const site = {
         // Clicking the close button closes the previously
         // opened screen (again Index or Project Information)
 
-        $('close').addEventListener('click', () => closeScreen());
+        $('close-button').addEventListener('click', () => closeScreen());
 
         // Adds the Index page functionality
 

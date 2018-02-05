@@ -24,16 +24,6 @@ body {
   opacity: 0;
 }
 
-.wrapper {
-  .closed {
-    display: none;
-  }
-
-  .open {
-    display: block;
-  }
-}
-
 svg {
   stroke: #000;
 }
@@ -57,14 +47,22 @@ header {
   .grid {
     height: auto;
   }
+
+  nav {
+    grid-column: 14 / 17;
+  
+    button:hover span {
+      border-bottom: 1px solid #000;
+    }
+  }
 }
 
 #slide-index {
-  grid-column: 2 / 4;
+  grid-column: 2/4;
 }
 
 #object-information {
-  grid-column: 4 / 8;
+  grid-column: 4/8;
 }
 
 #object-title {
@@ -72,14 +70,6 @@ header {
   margin-left: 1rem;
 }
 
-header nav {
-  grid-column: 14 / 17;
-
-  button:hover span {
-    border-bottom: 1px solid #000;
-  }
-
-}
 
 /* STRUCTURE */
 
@@ -90,7 +80,7 @@ h1 {
   line-height: .825em;
 }
 
-main .slide {
+.slide {
   width: 100%;
   height: 100vh;
 }
@@ -139,9 +129,18 @@ aside {
   .grid {
     height: auto;
   }
+
+  > section {
+    display: none;
+  }
+
+  &.open,
+  > section.open {
+    display: block;
+  }
 }
 
-#close {
+#close-button {
   font-size: 5rem;
   position: fixed;
   right: 2rem;
@@ -186,12 +185,10 @@ aside {
 #index {
   background: #000;
   height: auto;
-  top: 0;
-  z-index: 2;
 
   * {
     color: #fff;
-    height: auto;
+    // height: auto;
   }
 }
 
@@ -199,17 +196,14 @@ ul {
   font-size: 1.375rem;
   line-height: 1.5;
   grid-column: 10/16;
-  border-width: 1px;
-  border: 1px solid #fff;
-  border-top: none;
-  border-bottom: none;
-  column-rule: 1px solid #fff;
-  padding: 0 1rem;
   column-count: 2;
   column-gap: $gutter; 
   column-fill: auto;
-  color: white;
-  list-style: none;
+  column-rule: 1px solid #fff;
+  border: 1px solid #fff;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 1rem;
 
   li {
     text-indent: -$indent;
@@ -241,34 +235,14 @@ ul {
 }
 
 #number {
-  font-size: calc(40vw);
   font-family: "Neue Haas Grotesk Display Pro";
+  font-size: 40vw;
   letter-spacing: -.045em;
   line-height: .75;
-  grid-column: 2 / 8;
-  top: 1rem;
   position: fixed;
+  top: 1rem;
   left: calc(100%/16 + 1.25rem);
 }
 
-/* 404 PAGE NOT FOUND */
-
-.error {
-  margin: 1.5rem 1.5rem 1.5rem 4rem;
-
-  p {
-    font-size: 6rem;
-    letter-spacing: -.04em;
-    line-height: 1;
-  }
-  
-  a {
-    border-bottom: 1px solid black;
-  
-    &:hover {
-      border: none;
-    }
-  }
-}
-
+@import '404';
 @import 'media-queries';
