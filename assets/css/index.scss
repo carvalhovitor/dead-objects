@@ -6,7 +6,7 @@
 /* GENERAL SETUP */
 
 html {
-  font-family: "Neue Haas Grotesk Text Pro", sans-serif;
+  font-family: "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -248,7 +248,6 @@ ul {
   grid-column: 2 / 8;
   top: 1rem;
   position: fixed;
-  // left: calc((100% - 4.5rem)/12); // + .75rem for perfect grid fit
   left: calc(100%/16 + 1.25rem);
 }
 
@@ -272,171 +271,4 @@ ul {
   }
 }
 
-/* MEDIA QUERIES */
-
-@media screen and (min-width: 1600px) {
-  #number {
-     font-size: 40rem;
-  }
-}
-
-@media screen and (max-width: 1600px) {
-  .information p {
-    font-size: 3rem;
-  }
-}
-
-@media screen and (max-width: 1400px) {
-
-  /* INDEX PAGE */
-
-  ul {
-    column-count: 1;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .grid {
-    grid-template-columns: repeat(12, 1fr);
-  }
-
-  header nav {
-    grid-column: 10/13;
-  }
-
-  .information-wrapper {
-    grid-column: 1/12;
-  }
-
-  .information {
-    a {
-      border-width: 1px;
-      padding-bottom: 2px;
-    }
-
-    p {
-      font-size: 2.5rem;
-    }
-  }
-
-  /* INDEX PAGE */
-
-  ul {
-    grid-column: 8/12
-  }
-
-  #number {
-    left: calc(100%/12 + 1.5rem);
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .grid {
-    grid-template-columns: repeat(8, 1fr);
-    grid-column-gap: .75rem;
-    padding: 1.25rem;
-  }
-
-  h1 {
-    font-size: 14.425vw;
-    grid-column: 1/9;
-  }
-
-  #slide-index {
-    grid-column: 1/2;
-  }
-
-  #object-information {
-    grid-column: 3/7;
-  }
-
-  header nav {
-    grid-column: 7/8;
-  }
-
-  .information-wrapper {
-    grid-column: 1/8;
-  }
-
-  .information p {
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
-
-  /* INDEX PAGE */
-
-  #number {
-    display: none;
-  }
-
-  ul {
-    column-count: 2;
-    grid-column: 1/9;
-
-    border: none;
-    padding: 0;
-
-    li {
-      text-indent: -25px;
-      margin-left: 50px;
-
-      > span {
-        display: inline-block;
-        width: .25rem;
-      }
-
-      a {
-        display: inline;
-        margin-left: 1rem;
-      }
-    }
-  }
-
-  #close {
-    top: auto;
-    right: 1.5rem;
-    bottom: 0;
-  }
-}
-
-@media screen and (max-width: 600px) {
-
-    /* INDEX PAGE */
-
-    ul {
-      column-count: 1;
-    }
-
-    /* 404 PAGE NOT FOUND */
-
-    .error {
-      margin: 1rem;
-
-      p {
-        font-size: 3rem;
-        line-height: 1.1;
-      }
-      
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #object-information {
-    grid-column: 3/9;
-  }
-
-  header nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    padding: 1.25rem;
-  }
-
-  .information-wrapper {
-    grid-column: 1/9;
-  }
-
-  #close {
-    top: auto;
-  }
-}
+@import 'media-queries';

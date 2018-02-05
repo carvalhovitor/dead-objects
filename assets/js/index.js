@@ -1,7 +1,7 @@
 "use strict";
 
 const site = {
-    init : function() {
+    init : () => {
 
         // Alias declariation
 
