@@ -1,3 +1,7 @@
+<?php snippet('head') ?>
+
+<div class="wrapper">
+
 <?php snippet('header') ?>
 
 <main id="carousel">
@@ -16,7 +20,7 @@
       
       <div class="image">
         <?php foreach($object->images()->limit(1) as $image): ?>
-          <img src="<?= $image->url() ?>">
+          <img alt="<?= $object->title(); ?>" src="<?= $image->url() ?>">
         <?php endforeach ?>
       </div>
 
@@ -94,5 +98,10 @@
     let objects = <?= json_encode($json); ?>
 
   </script>
+
+</div>
+
+<?= js("https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js") ?>
+<?= js("assets/js/index.js") ?>
 
 <?php snippet('footer') ?>
