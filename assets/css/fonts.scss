@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Haas Text';
+    src: url('../fonts/haas-text.otf') format("otf"), 
+         url('../fonts/haas-text.woff2') format('woff2'),
+         url('../fonts/haas-text.woff') format('woff'),
+         url('../fonts/haas-text.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Haas Display';
+    src: url('../fonts/haas-display.otf') format("otf"), 
+         url('../fonts/haas-display.woff2') format('woff2'),
+         url('../fonts/haas-display.woff') format('woff'),
+         url('../fonts/haas-display.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -2,11 +2,12 @@
 @import 'reset';
 @import 'variables';
 @import 'flickity-override';
+@import 'fonts';
 
 /* GENERAL SETUP */
 
 html {
-  font-family: "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Haas Text", "Times", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -239,7 +240,7 @@ ul {
 }
 
 #number {
-  font-family: "Neue Haas Grotesk Display Pro";
+  font-family: "Haas Display";
   font-size: 40vw;
   letter-spacing: -.045em;
   line-height: .75;
