@@ -147,10 +147,9 @@ aside {
 }
 
 #close-button {
-  font-size: 5rem;
   position: fixed;
+  top: 2rem;
   right: 2rem;
-  top: 4px;
   z-index: 3;
 }
 
@@ -194,7 +193,6 @@ aside {
 
   * {
     color: #fff;
-    // height: auto;
   }
 }
 
