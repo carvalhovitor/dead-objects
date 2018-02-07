@@ -7,7 +7,7 @@
 /* GENERAL SETUP */
 
 html {
-  font-family: "Haas Text", "Times", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Haas Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -79,9 +79,10 @@ header {
 /* STRUCTURE */
 
 h1 {
-  font-size: 12.5vw;
+  font-family: "Dead Objects", "Helvetica Neue", Arial, sans-serif;
+  font-size: 11.5vw;
   grid-column: 2/17;
-  letter-spacing: -.05em;
+  letter-spacing: -.03em;
   line-height: .825em;
 }
 
@@ -240,7 +241,7 @@ ul {
 }
 
 #number {
-  font-family: "Haas Display";
+  font-family: "Haas Numbers", "Helvetica Neue", Arial, sans-serif;
   font-size: 40vw;
   letter-spacing: -.045em;
   line-height: .75;
