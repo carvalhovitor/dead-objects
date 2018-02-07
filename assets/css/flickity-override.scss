@@ -20,12 +20,12 @@ body.intro .flickity-prev-next-button {
 
 .flickity-prev-next-button.next {
     right: 0;
-    cursor: url('rarr.svg'), e-resize;	
+    cursor: url('rarr.svg') 16 16, e-resize;	
 }
 
 .flickity-prev-next-button.previous {
     left: 0;
-    cursor: url('larr.svg'), w-resize;	
+    cursor: url('larr.svg') 16 16, w-resize;	
 }
 
 .flickity-prev-next-button svg {
