@@ -16,3 +16,6 @@ index.php
 .htaccess
 *.css
 .sass-cache
+node_modules
+.babelrc
+gulpfile.babel.js

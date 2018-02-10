@@ -20,7 +20,7 @@
       
       <div class="image">
         <?php foreach($object->images()->limit(1) as $image): ?>
-          <img alt="<?= $object->title(); ?>" src="<?= $image->url() ?>">
+          <img alt="<?= $object->title(); ?>" data-flickity-lazyload="<?= $image->url() ?>">
         <?php endforeach ?>
       </div>
 
@@ -45,7 +45,7 @@
           <div class="line"></div>
           <div id="number"></div>
   
-          <ul>
+          <ul id="index-list">
             <?php foreach($objects->sortBy('title', 'asc') as $object): ?>
               <li>
                 <span class="object-number"><?= $object->num(); ?></span>
@@ -55,7 +55,13 @@
               </li>
             <?php endforeach ?>
           </ul>
-  
+      </div>
+
+      <div class="sorting">
+
+        <button id="alphabetically" class="selected">A</button>
+        <button id="numerically">1</button>
+
       </div>
     </section>
 

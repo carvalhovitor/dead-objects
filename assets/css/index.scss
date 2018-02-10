@@ -117,6 +117,12 @@ h1 {
     max-height: 100vh;
     margin: 0 auto;
     user-select: none;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+
+  .flickity-lazyloaded {
+    opacity: 1;
   }
 }
 
@@ -148,8 +154,8 @@ aside {
 
 #close-button {
   position: fixed;
-  top: 2rem;
-  right: 2rem;
+  top: 2.135rem;
+  right: 2.135rem;
   z-index: 3;
 }
 
@@ -159,6 +165,7 @@ aside {
   display: none;
   top: 0;
   left: 0;
+  height: auto;
 
   p {
     line-height: 1.05;
@@ -193,6 +200,27 @@ aside {
 
   * {
     color: #fff;
+  }
+
+  .sorting {
+    position: fixed;
+    right: 1.75rem;
+    top: 6.5rem;
+
+    button {
+      width: $sortButton;
+      height: $sortButton;
+      border: 1px solid #fff;
+      border-radius: $sortButton/2;
+      margin-bottom: 1rem;
+      background: #000;
+      z-index: 9;
+    }
+
+    .selected {
+      color: #000;
+      background: #fff;
+    }
   }
 }
 
@@ -240,7 +268,7 @@ ul {
 
 #number {
   font-family: "Haas Numbers", "Helvetica Neue", Arial, sans-serif;
-  font-size: 40vw;
+  font-size: 30vw;
   letter-spacing: -.045em;
   line-height: .75;
   position: fixed;

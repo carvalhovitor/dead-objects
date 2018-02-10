@@ -15,7 +15,8 @@ const site = {
             draggable: false,
             selectedAttraction: 1,
             friction: 1,
-            wrapAround: true
+            wrapAround: true,
+            lazyLoad: 2
         });
 
         main.style.opacity = 1;
@@ -134,6 +135,79 @@ const site = {
                 clearTimeout(timer);
             }
         })
+        
+        // Alphabetical and numerical list sorting
+
+        function sortAlphabetically(list) {
+            list.sort((a, b) => {
+                let x = a.childNodes[3].innerText.toLowerCase(),
+                    y = b.childNodes[3].innerText.toLowerCase();
+                
+                if (x < y) return ascending ? 1 : -1;
+                if (x > y) return ascending ? -1 : 1;
+                return 0;
+            })
+        }
+        
+        function sortNumerically(list) {
+            list.sort((a, b) => {
+                let x = a.childNodes[1].innerText,
+                    y = b.childNodes[1].innerText;
+                
+                return parseInt(ascending ? x : y, 10) - parseInt(ascending ? y : x, 10);
+            });
+        }
+
+        let ascending = true;
+
+        function sortList(callback) {
+            let list = document.getElementById('index-list'),
+                listClone = list.cloneNode(false),
+                listElements = [];
+
+            // Add all list elements to an array
+
+            for (let i = list.childNodes.length; i--;) {
+                if (list.childNodes[i].nodeName === 'LI') {
+                    listElements.push(list.childNodes[i]);
+                }
+            }
+
+            // Execute sorting callback
+
+            callback(listElements);
+
+            // Add the items into the list in order
+            
+            for (let i = 0; i < listElements.length; i++) {
+                listClone.appendChild(listElements[i]);
+            }
+
+            // Replace DOM list with sorted list
+
+            list.parentNode.replaceChild(listClone, list);
+
+            // Inverts ascending/descending status
+
+            ascending = !ascending;
+        }
+
+        let alphabeticalButton = $('alphabetically'),
+            numericalButton = $('numerically');
+
+            alphabeticalButton.addEventListener('click', function() {
+            this.innerHTML = ascending ? "Z" : "A";
+            numericalButton.classList.remove('selected');
+            this.classList.add('selected');
+            sortList(sortAlphabetically);
+        })
+            
+        numericalButton.addEventListener('click', function() {
+            this.innerHTML = ascending ? "1" : "100";
+            alphabeticalButton.classList.remove('selected');
+            this.classList.add('selected');
+            sortList(sortNumerically);
+        }) 
 
         // Adds event listeners to the anchor tags so that the Index 
         // page closes and the carousel goes to the right slide
