@@ -96,6 +96,18 @@
         column-count: 2;
     }
 
+    .closed + #carousel::after {
+        content: '';
+        background-image: url('star.svg');
+        position: fixed;
+        bottom: calc(50% - 25px);
+        right: 1rem;
+        background-size: 50px 50px;
+        height: 50px;
+        width: 50px;
+        pointer-events: none;
+    }
+
 }
 
 // 800 //////////////////////////////

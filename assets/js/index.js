@@ -195,7 +195,7 @@ const site = {
         let alphabeticalButton = $('alphabetically'),
             numericalButton = $('numerically');
 
-            alphabeticalButton.addEventListener('click', function() {
+        alphabeticalButton.addEventListener('click', function() {
             this.innerHTML = ascending ? "Z" : "A";
             numericalButton.classList.remove('selected');
             this.classList.add('selected');
