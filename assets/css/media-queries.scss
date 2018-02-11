@@ -153,21 +153,19 @@
         right: 1.5rem;
         bottom: 1.25rem;
     }
+  
+    /* INDEX PAGE */
 
     #index {
         .sorting {
-            top: auto;
+            top: 1.25rem;
             right: 1.25rem;
-            bottom: 4.75rem;
         }
     }
-
     
     .information-wrapper {
         grid-column: 1/9;
     }
-  
-    /* INDEX PAGE */
   
     ul {
         column-count: 1;
@@ -219,4 +217,5 @@
             padding-bottom: 0;
         }
     }
+    
 }
