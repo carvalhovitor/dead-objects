@@ -106,8 +106,18 @@
         height: 50px;
         width: 50px;
         pointer-events: none;
+        // -webkit-animation: rotation 3s infinite linear;
     }
 
+    // @-webkit-keyframes rotation {
+    //     from {
+    //         -webkit-transform: rotate(0deg);
+    //     }
+    //     to {
+    //         -webkit-transform: rotate(359deg);
+    //     }
+    //   }
+      
 }
 
 // 800 //////////////////////////////

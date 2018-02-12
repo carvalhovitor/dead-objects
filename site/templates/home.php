@@ -20,7 +20,7 @@
       
       <div class="image">
         <?php foreach($object->images()->limit(1) as $image): ?>
-          <img alt="<?= $object->title(); ?>" data-flickity-lazyload="<?= $image->url() ?>">
+          <img alt="<?= $object->title(); ?>" <!--src="assets/css/placeholder.svg"--> data-flickity-lazyload="<?= $image->url() ?>">
         <?php endforeach ?>
       </div>
 
