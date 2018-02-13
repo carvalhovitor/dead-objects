@@ -93,7 +93,7 @@ h1 {
 
 .grid {
   width: 100%;
-  // display: grid;
+  display: grid;
   height: calc(100vh - (2.25rem * 2));
   grid-template-columns: repeat(16, 1fr);
   grid-column-gap: $gutter;

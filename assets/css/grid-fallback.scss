@@ -2,7 +2,7 @@
     #{$prop}: calc((100%/16) * #{$width});
 }
 
-// @supports not (display: grid) {
+@supports not (display: grid) {
     
     .grid {
         display: flex;
@@ -74,4 +74,4 @@
 
     }
 
-// }
+}
