@@ -1,0 +1,77 @@
+@mixin calc($prop, $width) {
+    #{$prop}: calc((100%/16) * #{$width});
+}
+
+// @supports not (display: grid) {
+    
+    .grid {
+        display: flex;
+    
+        > * {
+            width: calc(100%/16 - 1.5rem);
+        }
+    
+        > *:not(:last-child) {
+            margin-right: $gutter;
+        }
+        
+        nav {
+            @include calc(width, 3);
+        }
+    }
+    
+    #slide-index {
+        @include calc(margin-left, 1);
+        width: calc((100%/16) * 2 - 1.5rem)
+    }
+    
+    #object-information {
+        @include calc(width, 10);
+    }
+
+    .information-wrapper {
+        @include calc(margin-left, 1);
+        @include calc(width, 13);
+    }
+
+    #index-list {
+        width: calc((100%/16) * 6 - .75rem);
+        margin-left: calc((100%/16) * 8 + .75rem)
+    }
+
+    @media screen and (max-width: 1200px) {
+
+        #index-list {
+            margin: 0;
+            width: calc((100%/16) * 15 - 1.5rem)
+        }
+
+        .information-wrapper {
+            width: calc((100%/12) * 11);
+            margin-left: 0;
+        }
+
+    }
+
+    @media screen and (max-width: 800px) {
+
+        #slide-index {
+            margin-left: 0;
+            width: calc((100%/8) * 2 - 1.5rem);
+        }
+
+        #index-list {
+            width: 100%;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .information-wrapper {
+            width: 100%;
+        }
+
+    }
+
+// }

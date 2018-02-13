@@ -34,6 +34,10 @@
         grid-template-columns: repeat(12, 1fr);
     }
 
+    .line {
+        display: none;
+    }
+
     header nav {
         grid-column: 10/13;
     }
