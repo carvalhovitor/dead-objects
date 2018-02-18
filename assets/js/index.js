@@ -165,17 +165,15 @@ const site = {
                 listClone = list.cloneNode(false),
                 listElements = [];
 
-            // Add all list elements to an array
+            // Add all list elements to the array
 
-            for (let i = list.childNodes.length; i--;) {
-                if (list.childNodes[i].nodeName === 'LI') {
-                    listElements.push(list.childNodes[i]);
-                }
-            }
+            listElements = Array.from(list.childNodes).filter(node => node.nodeName === "LI")
 
             // Execute sorting callback
 
-            callback(listElements);
+            if (typeof callback === 'function') {
+                callback(listElements);
+            }
 
             // Add the items into the list in order
             
