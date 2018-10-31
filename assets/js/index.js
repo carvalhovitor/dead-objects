@@ -3,7 +3,7 @@
 const site = {
     init : () => {
 
-        // Alias declariation
+        // Alias declaration
 
         const $ = id => document.getElementById(id);
 
