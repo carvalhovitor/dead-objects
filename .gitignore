@@ -1,10 +1,10 @@
 .DS_Store
-*.jpg
+# *.jpg
 *.svg
 *.map
 
 assets/fonts
-content
+content/*
 kirby
 panel
 site/*
@@ -20,3 +20,4 @@ node_modules
 gulpfile.babel.js
 static/objects
 static/assets/css/*.scss
+static/**/*.txt
