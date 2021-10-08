@@ -1,6 +1,7 @@
 title: Objects
 
 files: false
+pages: false
 
 options: 
   template: false  

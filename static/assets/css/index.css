@@ -1,0 +1,581 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  color: black;
+  text-decoration: none;
+  list-style: none;
+  font-weight: normal;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, main, menu, nav, section, summary {
+  /* Add correct display for IE 9- and some newer browsers */
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  display: block;
+  background: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+body.intro .flickity-prev-next-button {
+  height: 100vh;
+}
+
+.flickity-prev-next-button {
+  height: 100vh;
+  width: 50vw;
+  background: none;
+  border-radius: 0;
+  top: auto;
+  transform: none;
+  bottom: 0;
+  position: fixed;
+}
+
+.flickity-prev-next-button:hover {
+  background: none;
+  opacity: 0;
+}
+
+.flickity-prev-next-button.next {
+  right: 0;
+  cursor: url("rarr.svg") 16 16, e-resize;
+}
+
+.flickity-prev-next-button.previous {
+  left: 0;
+  cursor: url("larr.svg") 16 16, w-resize;
+}
+
+.flickity-prev-next-button svg {
+  display: none;
+}
+
+@font-face {
+  font-family: "Haas Text";
+  src: url("../fonts/haas-text.eot") format("otf"), url("../fonts/haas-text.eot?#iefix") format("embedded-opentype"), url("../fonts/haas-text.woff2") format("woff2"), url("../fonts/haas-text.woff") format("woff"), url("../fonts/haas-text.ttf") format("truetype"), url("../fonts/haas-text.svg#haas-text") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Haas Numbers";
+  src: url("../fonts/haas-numbers.eot");
+  src: url("../fonts/haas-numbers.eot?#iefix") format("embedded-opentype"), url("../fonts/haas-numbers.woff2") format("woff2"), url("../fonts/haas-numbers.woff") format("woff"), url("../fonts/haas-numbers.ttf") format("truetype"), url("../fonts/haas-numbers.svg#haas-display") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Dead Objects";
+  src: url("../fonts/dead-objects.eot");
+  src: url("../fonts/dead-objects.eot?#iefix") format("embedded-opentype"), url("../fonts/dead-objects.woff2") format("woff2"), url("../fonts/dead-objects.woff") format("woff"), url("../fonts/dead-objects.ttf") format("truetype"), url("../fonts/dead-objects.svg#dead-objects") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* GENERAL SETUP */
+html {
+  font-family: "Haas Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  line-height: 1;
+  line-height: 1.35;
+}
+
+.wrapper {
+  margin: 0 auto;
+  position: relative;
+}
+
+#carousel {
+  opacity: 0;
+}
+
+svg {
+  stroke: #000;
+}
+
+.open + button svg {
+  stroke: #fff;
+}
+
+/* NAVIGATION */
+.title-card header {
+  display: none;
+}
+
+header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+header .grid {
+  height: auto;
+}
+header nav {
+  grid-column: 14/17;
+}
+header nav button:hover span {
+  border-bottom: 1px solid #000;
+}
+header.closed {
+  display: none;
+}
+
+#slide-index {
+  grid-column: 2/4;
+}
+
+#object-information {
+  grid-column: 4/8;
+}
+
+#object-title {
+  text-indent: -1rem;
+  margin-left: 1rem;
+}
+
+/* STRUCTURE */
+h1 {
+  font-family: "Dead Objects", "Helvetica Neue", Arial, sans-serif;
+  font-size: 11.5vw;
+  grid-column: 2/17;
+  letter-spacing: -0.03em;
+  line-height: 0.825em;
+}
+
+.slide {
+  width: 100%;
+  height: 100vh;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  height: calc(100vh - 4.5rem);
+  grid-template-columns: repeat(16, 1fr);
+  grid-column-gap: 1.5rem;
+  padding: 2.25rem;
+}
+
+/* OBJECTS */
+.object .image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.object img {
+  max-width: 100%;
+  max-height: 100vh;
+  margin: 0 auto;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.object .flickity-lazyloaded {
+  opacity: 1;
+}
+
+/* ASIDE */
+aside {
+  display: none;
+  background: #fff;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  left: 0;
+}
+aside .grid {
+  height: auto;
+}
+aside > section {
+  display: none;
+}
+aside.open,
+aside > section.open {
+  display: block;
+}
+
+#close-button {
+  position: fixed;
+  top: 2.135rem;
+  right: 2.135rem;
+  z-index: 3;
+}
+
+/* INFORMATION PAGE */
+.information {
+  display: none;
+  top: 0;
+  left: 0;
+  height: auto;
+}
+.information p {
+  line-height: 1.05;
+  font-size: 4rem;
+  letter-spacing: -0.025em;
+}
+.information p + p {
+  text-indent: 2em;
+}
+.information a {
+  border-bottom: 2px solid #000;
+  padding-bottom: 3px;
+}
+.information a:hover {
+  border: none;
+}
+
+.information-wrapper {
+  margin-top: -1rem;
+  grid-column: 2/15;
+}
+
+/* INDEX PAGE */
+#index {
+  background: #000;
+  height: auto;
+}
+#index * {
+  color: #fff;
+}
+#index .sorting {
+  position: fixed;
+  right: 1.75rem;
+  top: 6.5rem;
+}
+#index .sorting button {
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 1px solid #fff;
+  border-radius: 1.875rem;
+  margin-bottom: 1rem;
+  background: #000;
+  z-index: 9;
+}
+#index .sorting .selected {
+  color: #000;
+  background: #fff;
+}
+
+ul {
+  font-size: 1.375rem;
+  line-height: 1.5;
+  grid-column: 10/16;
+  column-count: 2;
+  column-gap: 1.5rem;
+  column-rule: 1px solid #fff;
+  border: 1px solid #fff;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 1rem;
+}
+ul li {
+  text-indent: -1.5rem;
+  margin-left: 1.5rem;
+}
+ul li > span {
+  display: none;
+}
+ul li a {
+  display: block;
+}
+ul li a span {
+  pointer-events: none;
+}
+ul li a:hover span {
+  border-bottom: 1px solid #fff;
+}
+
+.line {
+  border-right: 1px solid #fff;
+  grid-column: 1/2;
+}
+
+#number {
+  font-family: "Haas Numbers", "Helvetica Neue", Arial, sans-serif;
+  font-size: 30vw;
+  letter-spacing: -0.045em;
+  line-height: 0.75;
+  position: fixed;
+  top: 1rem;
+  left: calc(6.25% + 1.25rem);
+}
+
+/* 404 PAGE NOT FOUND */
+.error {
+  margin: 1.5rem 1.5rem 1.5rem 4rem;
+}
+.error p {
+  font-size: 6rem;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.error a {
+  border-bottom: 1px solid black;
+}
+.error a:hover {
+  border: none;
+}
+
+@supports not (display: grid) {
+  .grid {
+    display: flex;
+  }
+  .grid > * {
+    width: calc(6.25% - 1.5rem);
+  }
+  .grid > *:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+  .grid nav {
+    width: calc((100%/16) * 3);
+  }
+
+  #slide-index {
+    margin-left: calc((100%/16) * 1);
+    width: calc(12.5% - 1.5rem);
+  }
+
+  #object-information {
+    width: calc((100%/16) * 10);
+  }
+
+  .information-wrapper {
+    margin-left: calc((100%/16) * 1);
+    width: calc((100%/16) * 13);
+  }
+
+  #index-list {
+    width: calc(37.5% - 0.75rem);
+    margin-left: calc(50% + 0.75rem);
+  }
+
+  @media screen and (max-width: 1200px) {
+    #index-list {
+      margin: 0;
+      width: calc(93.75% - 1.5rem);
+    }
+
+    .information-wrapper {
+      width: 91.6666666667%;
+      margin-left: 0;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    #slide-index {
+      margin-left: 0;
+      width: calc(25% - 1.5rem);
+    }
+
+    #index-list {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .information-wrapper {
+      width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 1600px) {
+  #number {
+    font-size: 35rem;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .information p {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 1400px) {
+  ul {
+    column-count: 1;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .line {
+    display: none;
+  }
+
+  header nav {
+    grid-column: 10/13;
+  }
+
+  .information-wrapper {
+    grid-column: 1/12;
+  }
+
+  .information a {
+    border-width: 1px;
+    padding-bottom: 0;
+  }
+  .information p {
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    grid-column: 2/11;
+  }
+
+  /* INDEX PAGE */
+  #number {
+    display: none;
+  }
+
+  ul {
+    column-count: 3;
+    column-gap: 3rem;
+    grid-column: 1/12;
+    border: none;
+    padding: 0;
+  }
+  ul li {
+    text-indent: -25px;
+    margin-left: 50px;
+  }
+  ul li > span {
+    display: inline-block;
+    width: 0.25rem;
+  }
+  ul li a {
+    display: inline;
+    margin-left: 1rem;
+  }
+}
+@media screen and (max-width: 1024px) {
+  ul {
+    column-count: 2;
+  }
+
+  .closed + #carousel::after {
+    content: "";
+    background-image: url("star.svg");
+    position: fixed;
+    bottom: calc(50% - 25px);
+    right: 1rem;
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+    pointer-events: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 0.75rem;
+    padding: 1.25rem;
+  }
+
+  h1 {
+    font-size: 14.425vw;
+    grid-column: 1/9;
+  }
+
+  #slide-index {
+    grid-column: 1/2;
+  }
+
+  #object-information {
+    grid-column: 3/7;
+  }
+
+  header nav {
+    grid-column: 7/8;
+  }
+
+  .information-wrapper {
+    grid-column: 1/8;
+    margin-top: -0.25rem;
+  }
+
+  .information p {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  /* INDEX PAGE */
+  ul {
+    grid-column: 1/9;
+  }
+}
+@media screen and (max-width: 600px) {
+  #close-button {
+    top: auto;
+    right: 1.5rem;
+    bottom: 1.25rem;
+  }
+
+  /* INDEX PAGE */
+  #index .sorting {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .information-wrapper {
+    grid-column: 1/9;
+  }
+
+  ul {
+    column-count: 1;
+  }
+
+  /* 404 PAGE NOT FOUND */
+  .error {
+    margin: 1rem;
+  }
+  .error p {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+}
+@media screen and (max-width: 480px) {
+  body {
+    line-height: 1.4;
+  }
+
+  #object-information {
+    grid-column: 3/9;
+  }
+
+  header nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+  }
+
+  #close {
+    top: auto;
+  }
+
+  .information p {
+    font-size: 1.375rem;
+    line-height: 1.2;
+  }
+  .information a {
+    padding-bottom: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

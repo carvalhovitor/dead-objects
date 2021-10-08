@@ -14,8 +14,9 @@ site/*
 thumbs
 index.php
 .htaccess
-*.css
 .sass-cache
 node_modules
 .babelrc
 gulpfile.babel.js
+static/objects
+static/assets/css/*.scss
