@@ -7,13 +7,18 @@ const site = {
 
         const $ = id => document.getElementById(id);
 
+        // Is touch device?
+
+        let isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+
         // Flickity initialization
 
         const main = $('carousel');
+        let attraction = isTouch ? .5 : 1;
         const flkty = new Flickity(main, {
             pageDots: false,
-            draggable: false,
-            selectedAttraction: 1,
+            draggable: true,
+            selectedAttraction: attraction,
             friction: 1,
             wrapAround: true,
             lazyLoad: 2
@@ -24,7 +29,7 @@ const site = {
         // Selects slide if the document has been loaded with a hash
 
         if (window.location.hash) {
-            flkty.selectCell(window.location.hash);
+            flkty.selectCell(window.location.hash, false, true);
         }
 
         // Adds class to body to hide the header on the first slide

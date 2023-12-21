@@ -347,32 +347,26 @@ ul li a:hover span {
   .grid nav {
     width: calc((100%/16) * 3);
   }
-
   #slide-index {
     margin-left: calc((100%/16) * 1);
     width: calc(12.5% - 1.5rem);
   }
-
   #object-information {
     width: calc((100%/16) * 10);
   }
-
   .information-wrapper {
     margin-left: calc((100%/16) * 1);
     width: calc((100%/16) * 13);
   }
-
   #index-list {
     width: calc(37.5% - 0.75rem);
     margin-left: calc(50% + 0.75rem);
   }
-
   @media screen and (max-width: 1200px) {
     #index-list {
       margin: 0;
       width: calc(93.75% - 1.5rem);
     }
-
     .information-wrapper {
       width: 91.6666666667%;
       margin-left: 0;
@@ -383,7 +377,6 @@ ul li a:hover span {
       margin-left: 0;
       width: calc(25% - 1.5rem);
     }
-
     #index-list {
       width: 100%;
     }
@@ -413,19 +406,15 @@ ul li a:hover span {
   .grid {
     grid-template-columns: repeat(12, 1fr);
   }
-
   .line {
     display: none;
   }
-
   header nav {
     grid-column: 10/13;
   }
-
   .information-wrapper {
     grid-column: 1/12;
   }
-
   .information a {
     border-width: 1px;
     padding-bottom: 0;
@@ -433,16 +422,13 @@ ul li a:hover span {
   .information p {
     font-size: 2.5rem;
   }
-
   h1 {
     grid-column: 2/11;
   }
-
   /* INDEX PAGE */
   #number {
     display: none;
   }
-
   ul {
     column-count: 3;
     column-gap: 3rem;
@@ -467,7 +453,6 @@ ul li a:hover span {
   ul {
     column-count: 2;
   }
-
   .closed + #carousel::after {
     content: "";
     background-image: url("star.svg");
@@ -486,34 +471,27 @@ ul li a:hover span {
     grid-column-gap: 0.75rem;
     padding: 1.25rem;
   }
-
   h1 {
     font-size: 14.425vw;
     grid-column: 1/9;
   }
-
   #slide-index {
     grid-column: 1/2;
   }
-
   #object-information {
     grid-column: 3/7;
   }
-
   header nav {
     grid-column: 7/8;
   }
-
   .information-wrapper {
     grid-column: 1/8;
     margin-top: -0.25rem;
   }
-
   .information p {
     font-size: 1.75rem;
     line-height: 1.2;
   }
-
   /* INDEX PAGE */
   ul {
     grid-column: 1/9;
@@ -525,21 +503,17 @@ ul li a:hover span {
     right: 1.5rem;
     bottom: 1.25rem;
   }
-
   /* INDEX PAGE */
   #index .sorting {
     top: 1.25rem;
     right: 1.25rem;
   }
-
   .information-wrapper {
     grid-column: 1/9;
   }
-
   ul {
     column-count: 1;
   }
-
   /* 404 PAGE NOT FOUND */
   .error {
     margin: 1rem;
@@ -553,28 +527,29 @@ ul li a:hover span {
   body {
     line-height: 1.4;
   }
-
   #object-information {
     grid-column: 3/9;
   }
-
   header nav {
     position: fixed;
     bottom: 0;
     left: 0;
     padding: 1.25rem;
   }
-
   #close {
     top: auto;
   }
-
   .information p {
     font-size: 1.375rem;
     line-height: 1.2;
   }
   .information a {
     padding-bottom: 0;
+  }
+}
+@media (hover: none) {
+  .flickity-button {
+    display: none !important;
   }
 }
 
