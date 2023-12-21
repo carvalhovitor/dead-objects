@@ -18,7 +18,7 @@ const site = {
         const flkty = new Flickity(main, {
             pageDots: false,
             draggable: true,
-            selectedAttraction: attraction,
+            selectedAttraction: 1,
             friction: 1,
             wrapAround: true,
             lazyLoad: 2

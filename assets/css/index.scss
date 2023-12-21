@@ -219,7 +219,7 @@ aside {
       width: $sortButton;
       height: $sortButton;
       border: 1px solid #fff;
-      border-radius: $sortButton/2;
+      border-radius: calc($sortButton/2);
       margin-bottom: 1rem;
       background: #000;
       z-index: 9;

@@ -547,10 +547,5 @@ ul li a:hover span {
     padding-bottom: 0;
   }
 }
-@media (hover: none) {
-  .flickity-button {
-    display: none !important;
-  }
-}
 
 /*# sourceMappingURL=index.css.map */
