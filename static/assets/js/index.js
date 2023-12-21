@@ -14,7 +14,7 @@ const site = {
         // Flickity initialization
 
         const main = $('carousel');
-        let attraction = isTouch ? .5 : 1;
+        let attraction = isTouch ? .1 : 1;
         const flkty = new Flickity(main, {
             pageDots: false,
             draggable: true,
